@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import BlogCard from './BlogCard';
+import Pagination from './Pagination';
 
 const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
-  const [currentPage , setCurrentPage] = useState(1)
+  const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 12;
-  const [selectedCategory , setSelectedCategory] = useState(null);
-  const [activeCategory , setActiveCategory] = useState(null);
-
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [activeCategory, setActiveCategory] = useState(null);
 
   useEffect(() => {
     async function fetchBlogs() {
-      const url = `http://localhost:5000/blogs?page=${currentPage} & limit=${pageSize}`;
+      let url = `http://localhost:5000/blogs?page=${currentPage}&limit=${pageSize}`;
 
-      if(selectedCategory) {
-        url += `&category=${selectedCategory}`
+      if (selectedCategory) {
+        url += `&category=${selectedCategory}`;
       }
 
       try {
@@ -33,33 +33,27 @@ const BlogPage = () => {
     fetchBlogs();
   }, [currentPage, pageSize, selectedCategory]);
 
-  const handlePageChange = (category) => {
-    setCurrentPage(category)
-  }
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
     setCurrentPage(1);
-    setActiveCategory(category)
-
-  }
+    setActiveCategory(category);
+  };
 
   return (
     <div>
-      {/* {blogs.map(blog => (
-        <div key={blog.id}>
-          <h2>{blog.title}</h2>
-          <img src={blog.image} alt={blog.title} />
-          <p>{blog.content}</p>
-        </div>
-      ))} */}
-      <div>Page Category</div>
+      {/* BlogCards Section */}
+      <div>
+        <BlogCard blogs={blogs} currentPage={currentPage} pageSize={pageSize} selectedCategory={selectedCategory} />
+      </div>
 
-      {/* blogcards section */}
-      <div><BlogCard blogs={blogs} currentPage={currentPage} pageSize={pageSize} selectedCategory={selectedCategory}/></div>
-
-      {/* pagination section */}
-      <div>Pagination</div>
+      {/* Pagination Section */}
+      <div>
+        <Pagination onPageChange={handlePageChange} totalBlogs={blogs.length} currentPage={currentPage} pageSize={pageSize} />
+      </div>
     </div>
   );
 };
