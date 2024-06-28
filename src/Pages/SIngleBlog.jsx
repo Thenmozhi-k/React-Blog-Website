@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FaClock, FaUser } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
 
 const SingleBlog = () => {
@@ -41,8 +42,41 @@ const SingleBlog = () => {
 
   return (
     <div>
+      {/* <img src={blog.image} alt="" />
       <h1>{blog.title}</h1>
-      <p>{blog.content}</p>
+      <p>{blog.content}</p> */}
+      <div className='py-40 bg-black text-center text-white px-4'>
+         <h2 className='text-5xl lg:text-7xl leading-snug font-bold mb-5'>Single Blog Page</h2>
+      </div>
+
+      {/* blog details */}
+      <div className='max-w-7xl mx-auto my-12'>
+        <div className='lg:w-3/4 mx-auto'>
+          <div>
+            <img src={blog.image} alt="" className='w-full mx-auto rounded' />
+          </div>
+
+          < h2 className='text-3xl mt-8 font-bold mb-4 text-blue-500 cursor-pointer'>{blog.title}</h2>
+          <p className='mb-3 text-gray-600'><FaUser className='inline-flex items-center mr-2'/>{blog.author} |  {blog.published_date}</p>
+          <p className='mb-3 text-gray-600'><FaClock className='inline-flex items-center mr-2'/> {blog.reading_time}</p>
+          <p className='text-base text-gray-500 mb-6'>{blog.content}</p>
+          <div className='text-base text-gray-600'>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis corporis ratione
+               aperiam laudantium. Alias assumenda, atque reiciendis dolorem quae, fuga, nulla necessitatibus
+                voluptatum nemo eveniet fugiat voluptatem possimus odit minus?</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ex rem similique magnam
+                   quas ad eligendi soluta. Aliquid magnam sapiente modi! Recusandae corporis nam maiores, enim eaque est nihil obcaecati?</p>
+
+                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis corporis ratione
+               aperiam laudantium. Alias assumenda, atque reiciendis dolorem quae, fuga, nulla necessitatibus
+                voluptatum nemo eveniet fugiat voluptatem possimus odit minus?</p>
+
+                   
+          </div>
+        </div>
+      </div>
+      
     </div>
   );
 };
