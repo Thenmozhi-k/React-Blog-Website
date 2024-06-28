@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaFacebook , FaDribbbleSquare, FaTwitterSquare, FaBars  } from "react-icons/fa";
 import { FaXmark } from 'react-icons/fa6';
+import Modal from '../Components/Modal';
 
 
 const Nav = () => {
@@ -14,9 +15,19 @@ const Nav = () => {
   ];
 
   const [isMenuOpen , setIsMenuOpen] = useState(false);
+  const [isModelOpen , setIsModelOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  }
+
+  // modal 
+  const openModal = () => {
+    setIsModelOpen(true);
+  }
+
+  const closeModal = () => {
+    setIsModelOpen(false);
   }
 
   return (
@@ -41,14 +52,18 @@ const Nav = () => {
             </li>
           ))}
         </ul>
-
+          
+          {/* menu icons */}
         <div className='lg:flex text-white gap-4 items-center hidden'>
           <a href="" className='hover:text-orange-500'><FaFacebook /></a>
           <a href="" className='hover:text-orange-500'><FaDribbbleSquare /></a>
           <a href="" className='hover:text-orange-500'><FaTwitterSquare /></a>
-          <button className='bg-orange-500 px-6 py-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Log in</button>
+          <button onClick={openModal} className='bg-orange-500 px-6 py-2 font-medium rounded hover:bg-white hover:text-orange-500 transition-all duration-200 ease-in'>Log in</button>
         </div>
 
+        <Modal isOpen={isModelOpen} onClose={closeModal}/>
+         
+         {/* mobile menu mobile screen */}
         <div className='md:hidden'> 
           <button className='cursor-pointer' onClick={toggleMenu}>
 

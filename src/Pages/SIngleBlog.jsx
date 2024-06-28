@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaClock, FaUser } from 'react-icons/fa';
 import { useParams } from 'react-router-dom';
+import SideBar from '../Components/SideBar';
 
 const SingleBlog = () => {
   const { id } = useParams();
@@ -50,7 +51,7 @@ const SingleBlog = () => {
       </div>
 
       {/* blog details */}
-      <div className='max-w-7xl mx-auto my-12'>
+      <div className='max-w-7xl mx-auto my-12 flex flex-col md:flex-row gap-12'>
         <div className='lg:w-3/4 mx-auto'>
           <div>
             <img src={blog.image} alt="" className='w-full mx-auto rounded' />
@@ -64,16 +65,37 @@ const SingleBlog = () => {
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis corporis ratione
                aperiam laudantium. Alias assumenda, atque reiciendis dolorem quae, fuga, nulla necessitatibus
                 voluptatum nemo eveniet fugiat voluptatem possimus odit minus?</p>
+                <br />
 
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ex rem similique magnam
                    quas ad eligendi soluta. Aliquid magnam sapiente modi! Recusandae corporis nam maiores, enim eaque est nihil obcaecati?</p>
+                   <br />
 
                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis corporis ratione
                aperiam laudantium. Alias assumenda, atque reiciendis dolorem quae, fuga, nulla necessitatibus
+                voluptatum nemo eveniet fugiat voluptatem possimus odit minus?</p> <br />
+
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis corporis ratione
+               aperiam laudantium. Alias assumenda, atque reiciendis dolorem quae, fuga, nulla necessitatibus
+                voluptatum nemo eveniet fugiat voluptatem possimus odit minus?</p> <br />
+
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis corporis ratione
+               aperiam laudantium. Alias assumenda, atque reiciendis dolorem quae, fuga, nulla necessitatibus
                 voluptatum nemo eveniet fugiat voluptatem possimus odit minus?</p>
+            <br />
+
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis corporis ratione
+               aperiam laudantium. Alias assumenda, atque reiciendis dolorem quae, fuga, nulla necessitatibus
+                voluptatum nemo eveniet fugiat voluptatem possimus odit minus?</p>
+
+
 
                    
           </div>
+        </div>
+
+        <div className='lg:w-1/2'>
+          <SideBar/>
         </div>
       </div>
       
