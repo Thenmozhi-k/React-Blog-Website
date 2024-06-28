@@ -4,7 +4,7 @@ const Modal = ({isOpen, onClose}) => {
   return (
     <div className={`fixed top-0 left-0 w-full h-full flex items-center justify-center ${isOpen ? "" : "hidden"}`}>
         <div className='modal-container'>
-            <div className='bg-indigo-500 text-center p-5 h-96 lg:w-[500px] rounded shadow-md'>
+            <div className='bg-orange-500 text-center p-5 h-96 lg:w-[500px] rounded shadow-md'>
                 {/* modal content */}
                 <h2 className='text-xl font-semibold mb-4 mt-6 mb-5 uppercase'>Please Login Here!</h2>
                 <form>
