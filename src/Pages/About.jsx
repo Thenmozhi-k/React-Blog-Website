@@ -1,4 +1,11 @@
 import React from 'react';
+import about from '../assets/about.png'
+import user1 from '../assets/user-01.png'
+import user2 from '../assets/user-02.png'
+import user3 from '../assets/user-03.png'
+import user4 from '../assets/user-04.avif'
+import user5 from '../assets/user-05.avif'
+import user6 from '../assets/user-06.avif'
 
 const About = () => {
   return (
@@ -26,7 +33,7 @@ const About = () => {
             </p>
           </div>
           <div>
-            <img src='src/assets/about.png' alt='Our Story' className='rounded-lg shadow-lg'/>
+            <img src={about} alt='Our Story' className='rounded-lg shadow-lg'/>
           </div>
         </div>
       </div>
@@ -37,32 +44,32 @@ const About = () => {
           <h3 className='text-3xl font-semibold text-center mb-8'>Meet the Team</h3>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
             <div className='bg-white p-6 rounded-lg shadow-lg text-center'>
-              <img src='src/assets/user-01.png' alt='Team Member' className='w-32 h-32 rounded-full mx-auto mb-4'/>
+              <img src={user1} alt='Team Member' className='w-32 h-32 rounded-full mx-auto mb-4'/>
               <h4 className='text-xl font-bold mb-2'>John Doe</h4>
               <p className='text-gray-700'>Founder & CEO</p>
             </div>
             <div className='bg-white p-6 rounded-lg shadow-lg text-center'>
-              <img src='src/assets/user-02.png' alt='Team Member' className='w-32 h-32 rounded-full mx-auto mb-4'/>
+              <img src={user2} alt='Team Member' className='w-32 h-32 rounded-full mx-auto mb-4'/>
               <h4 className='text-xl font-bold mb-2'>Jane Smith</h4>
               <p className='text-gray-700'>Chief Editor</p>
             </div>
             <div className='bg-white p-6 rounded-lg shadow-lg text-center'>
-              <img src='src/assets/user-03.png' alt='Team Member' className='w-32 h-32 rounded-full mx-auto mb-4'/>
+              <img src={user3} alt='Team Member' className='w-32 h-32 rounded-full mx-auto mb-4'/>
               <h4 className='text-xl font-bold mb-2'>Alex Johnson</h4>
               <p className='text-gray-700'>Marketing Head</p>
             </div>
             <div className='bg-white p-6 rounded-lg shadow-lg text-center'>
-              <img src='src/assets/user-04.avif' alt='Team Member' className='w-32 h-32 rounded-full mx-auto mb-4'/>
+              <img src={user4} alt='Team Member' className='w-32 h-32 rounded-full mx-auto mb-4'/>
               <h4 className='text-xl font-bold mb-2'>Emily Davis</h4>
               <p className='text-gray-700'>Content Writer</p>
             </div>
             <div className='bg-white p-6 rounded-lg shadow-lg text-center'>
-              <img src='src/assets/user-05.avif' alt='Team Member' className='w-32 h-32 rounded-full mx-auto mb-4'/>
+              <img src={user5} alt='Team Member' className='w-32 h-32 rounded-full mx-auto mb-4'/>
               <h4 className='text-xl font-bold mb-2'>Michael Brown</h4>
               <p className='text-gray-700'>Web Developer</p>
             </div>
             <div className='bg-white p-6 rounded-lg shadow-lg text-center'>
-              <img src='src/assets/user-06.avif' alt='Team Member' className='w-32 h-32 rounded-full mx-auto mb-4'/>
+              <img src={user6} alt='Team Member' className='w-32 h-32 rounded-full mx-auto mb-4'/>
               <h4 className='text-xl font-bold mb-2'>Sarah Wilson</h4>
               <p className='text-gray-700'>Graphic Designer</p>
             </div>

@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { FaFacebook , FaDribbbleSquare, FaTwitterSquare, FaBars  } from "react-icons/fa";
 import { FaXmark } from 'react-icons/fa6';
 import Modal from '../Components/Modal';
+import logo from '../assets/logo.png'
 
 
 const Nav = () => {
@@ -34,7 +35,7 @@ const Nav = () => {
     <header className='bg-black text-white fixed top-0 left-0 right-0'>
       <nav className='px-4 py-4 max-w-7xl mx-auto flex justify-between items-center '>
         <a href="/">
-          <img src="src/assets/logo.png" alt="logo" className='w-28' />
+          <img src={logo} alt="logo" className='w-28' />
         </a>
 
         <ul className='md:flex gap-12 text-lg hidden'>
